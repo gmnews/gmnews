@@ -1,4 +1,4 @@
-# News App
+# GM News
 
 ## Table of Contents
 1. [Overview](#Overview)
