@@ -12,12 +12,12 @@
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category: Entertainment, News, Utilities, and Producivity**
+- **Mobile: Pretty mobile, easy to use anywhere**
+- **Story: This product has great value for people who want to kickstart their morning, by having important information available to them in one place.**
+- **Market: The market is college students and more professional people. It's mostly for anyone who is looking to be more productive in the morning.**
+- **Habit: Every day in the morning.**
+- **Scope: Technically speaking, the logic running the app is not too intense. However, making it look attractive will be where our troubles will arise. A stripped down version, with only a news stream, would still be interesting. The vision we have for the product is crystal clear, and we are excited to bring it to market.**
 
 ## Product Spec
 
