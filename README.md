@@ -9,6 +9,7 @@
 ## Overview
 ### Description
 [Description of your app]
+**GM News is an all-in-one app that wakes you up in the morning, and has your personally selected news sources ready to inform when you slip on your slippers and pour your coffee. Our user-targeted alarm clock will get you up and ready in the morning. Studies show that reading in the morning is beneficial since your mind is most susceptible to information. Also, most people tend to read longer articles early in the morning as opposed to other times throughout the day.** 
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
