@@ -26,7 +26,6 @@
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
 * Sign-Up/Sign-In/Log Out
 * Add/remove news sources
 * View news sources
@@ -37,7 +36,6 @@
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
 * Show full article in app
 * Show weather
 * Share article
@@ -75,7 +73,6 @@
    * Logout -> Sign-Up/Sign-In Screen
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://i.imgur.com/JuJkK7D.jpg" width=600>
 
 ## Schema 
