@@ -78,10 +78,6 @@
 [Add picture of your hand sketched wireframes in this section]
 <img src="https://i.imgur.com/JuJkK7D.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
