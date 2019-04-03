@@ -76,10 +76,34 @@
 <img src="https://i.imgur.com/JuJkK7D.jpg" width=600>
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | username      | String   | unique id for the user |
+   | password      | String   | password for the user |
+   | email         | String   | user's email (used for account management) |
+   | newsList      | [String] | image that user posts |
+   
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of network requests by screen
+   - Log-In Screen
+      - (Read/GET) Authenticate User
+      - (Create/POST) Create User
+   - News Screen
+      - (Read/GET) Query news sources from user
+   - Alarm Screen
+      - None necesarry, since alarms are saved locally
+   - Profile Screen
+      - (Update/PUT) Update user profile image
+      - (Read/GET) View selected/all news sources
+      - (Update/PUT) Update news sources
+#### [OPTIONAL:] Existing API Endpoints
+##### News API
+- Base URL - [https://www.newsapi.org/v2](https://www.newsapi.org)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /top-headlines | gets top headlines for a country or specific news source
+    `GET`    | /sources | get major sources from provided country
