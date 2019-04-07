@@ -6,29 +6,59 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--News-->
         <scene sceneID="eVa-Sz-q2L">
             <objects>
-                <viewController id="a6d-xT-vRB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v5S-WM-S8U">
+                <viewController id="a6d-xT-vRB" customClass="NewsTableViewController" customModule="gmNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lq3-d1-ScT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="News" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QmW-hf-g5Y">
-                                <rect key="frame" x="162" y="237" width="50" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="izu-Mb-EjU"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsSource" rowHeight="112" id="noG-FN-4wg" customClass="ArticleTableViewCell" customModule="gmNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="noG-FN-4wg" id="AKT-Ru-gHq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM7-rm-gw5">
+                                            <rect key="frame" x="16" y="11" width="107.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPb-L2-jlG">
+                                            <rect key="frame" x="16" y="36" width="343" height="65"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vM7-rm-gw5" firstAttribute="top" secondItem="AKT-Ru-gHq" secondAttribute="topMargin" id="20o-P8-evD"/>
+                                        <constraint firstItem="vM7-rm-gw5" firstAttribute="top" secondItem="AKT-Ru-gHq" secondAttribute="topMargin" id="2KY-Y6-dD5"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="bottom" secondItem="AKT-Ru-gHq" secondAttribute="bottomMargin" id="9bt-tA-4fP"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="leading" secondItem="AKT-Ru-gHq" secondAttribute="leadingMargin" id="BKN-Z4-5Kx"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="top" secondItem="vM7-rm-gw5" secondAttribute="bottom" constant="4" id="BUB-K5-A3A"/>
+                                        <constraint firstItem="vM7-rm-gw5" firstAttribute="top" secondItem="AKT-Ru-gHq" secondAttribute="topMargin" id="CtD-KV-5fb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vM7-rm-gw5" secondAttribute="bottom" constant="69" id="G10-o6-ERf"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="top" secondItem="vM7-rm-gw5" secondAttribute="bottom" constant="4" id="Xqs-0l-Bkm"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="trailing" secondItem="AKT-Ru-gHq" secondAttribute="trailingMargin" id="eUj-KE-rVg"/>
+                                        <constraint firstItem="vM7-rm-gw5" firstAttribute="leading" secondItem="AKT-Ru-gHq" secondAttribute="leadingMargin" id="oXn-oP-MIp"/>
+                                        <constraint firstItem="OPb-L2-jlG" firstAttribute="leading" secondItem="AKT-Ru-gHq" secondAttribute="leadingMargin" id="pNk-XI-xdn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleText" destination="OPb-L2-jlG" id="GKI-Ps-Wu7"/>
+                                    <outlet property="sourceName" destination="vM7-rm-gw5" id="RxC-Bk-FAI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="News" id="q4A-Ab-wVf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
