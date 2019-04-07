@@ -21,6 +21,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
+    
     @IBAction func usernameFieldChanged(_ sender: UITextField) {
         if (sender.text ?? "").isEmpty {
             wrongUsernameImage.isHidden = true
@@ -36,7 +42,8 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                UserDefaults.standard.set(true, forKey: "userLoggedIn")
+                self.performSegue(withIdentifier: "loginSegue", sender: self)
             } else if error != nil{
                 self.wrongUsernameImage.isHidden = false
                 self.wrongPasswordImage.isHidden = false

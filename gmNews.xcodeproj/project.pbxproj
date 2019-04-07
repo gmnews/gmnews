@@ -20,6 +20,7 @@
 		9B753298352E7FA013BFB6E7 /* Pods_gmNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADA4488F32BBBB0222B468B /* Pods_gmNewsTests.framework */; };
 		A37F693454871D99118C7E42 /* Pods_gmNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A216B595BEB9187562077A /* Pods_gmNewsUITests.framework */; };
 		DC338C3522592AA100315326 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC338C3422592AA100315326 /* LoginViewController.swift */; };
+		DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */; };
 		F83809AAA64D7C342E8FFE03 /* Pods_gmNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFC85E9F88A7BF918D8BB15 /* Pods_gmNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AA1CA5977214C6A385B0EB9B /* Pods-gmNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNews.debug.xcconfig"; path = "Target Support Files/Pods-gmNews/Pods-gmNews.debug.xcconfig"; sourceTree = "<group>"; };
 		AACA9E564A50AF22C1097302 /* Pods-gmNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNews.release.xcconfig"; path = "Target Support Files/Pods-gmNews/Pods-gmNews.release.xcconfig"; sourceTree = "<group>"; };
 		DC338C3422592AA100315326 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E83E679FD280E38E8F384DBD /* Pods-gmNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-gmNewsUITests/Pods-gmNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				52E82B16224C2FF50025F9B2 /* LaunchScreen.storyboard */,
 				52E82B19224C2FF50025F9B2 /* Info.plist */,
 				DC338C3422592AA100315326 /* LoginViewController.swift */,
+				DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */,
 			);
 			path = gmNews;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				DC338C3522592AA100315326 /* LoginViewController.swift in Sources */,
 				52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */,
 				52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */,
+				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
