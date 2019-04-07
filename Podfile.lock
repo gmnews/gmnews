@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
   - Bolts/Tasks (1.9.0)
+  - NewsAPISwift (2.0)
   - Parse (1.17.2):
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - NewsAPISwift (~> 2.0)
   - Parse
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - NewsAPISwift
     - Parse
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  NewsAPISwift: 61b069546b0170b48ee3ef7a0158b294e125d7b7
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
 
-PODFILE CHECKSUM: 23f44c04bc85130ad24f42d7c45438b79be9d984
+PODFILE CHECKSUM: aa3bccecec75d7bbfedc93c7d7ef4a63f4d2b9d3
 
 COCOAPODS: 1.6.1

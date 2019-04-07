@@ -8,6 +8,7 @@ target 'gmNews' do
   # Pods for gmNews
   pod "Parse"
   pod "AlamofireImage"
+  pod "NewsAPISwift", "~> 2.0"
 
   target 'gmNewsTests' do
     inherit! :search_paths
