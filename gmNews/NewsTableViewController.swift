@@ -28,7 +28,7 @@ class NewsTableViewController: UITableViewController {
     
     
     func loadNews(){
-        newsAPI.getTopHeadlines(sources: ["cnn"]) { result in
+        newsAPI.getTopHeadlines(country: .us) { result in
             switch result {
             case .success(let headlines):
                 print(headlines)
