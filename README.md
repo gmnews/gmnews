@@ -26,9 +26,9 @@
 
 **Required Must-have Stories**
 
-* Sign-Up/Sign-In/Log Out
-* Add/remove news sources
-* View news sources
+* Sign-Up/Sign-In/Log Out :heavy_check_mark:
+* Add/remove news sources 
+* View news sources :heavy_check_mark:
 * Create alarms
 * Turn off alarms
 * Show full article when pressed
