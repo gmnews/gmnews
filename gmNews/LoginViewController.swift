@@ -36,6 +36,10 @@ class LoginViewController: UIViewController {
     @IBAction func passwordFieldChanged(_ sender: Any) {
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameField.text!
         let password = passwordField.text!
