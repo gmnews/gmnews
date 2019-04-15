@@ -132,10 +132,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mAe-iI-UDg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="n4T-ll-uuD"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QDh-Ut-vO6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="QDh-Ut-vO6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.99769014119999999" green="0.2634462118" blue="0.15566748380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Crt-la-NMK" kind="relationship" relationship="viewControllers" id="KEO-EO-tuk"/>
@@ -151,7 +151,7 @@
         <scene sceneID="KR0-3t-iGq">
             <objects>
                 <viewControllerPlaceholder storyboardName="News" id="Crt-la-NMK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ayU-su-hZM"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" id="ayU-su-hZM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6U-bf-gOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +161,7 @@
         <scene sceneID="5cH-VS-2Fe">
             <objects>
                 <viewControllerPlaceholder storyboardName="Alarm" id="e47-GI-IGJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="T5T-SB-wgV"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-clock" selectedImage="alarm-clock" id="T5T-SB-wgV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHL-eJ-jbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,7 +171,9 @@
         <scene sceneID="77U-xt-mPC">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="3Ps-Jf-7gd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yvB-D4-KwP"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="worker" id="yvB-D4-KwP">
+                        <color key="badgeColor" red="0.99769014119999999" green="0.2634462118" blue="0.15566748380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2w-MZ-rTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,7 +181,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alarm-clock" width="24" height="24"/>
         <image name="exclamation-mark" width="512" height="512"/>
         <image name="news-report" width="512" height="512"/>
+        <image name="newspaper" width="24" height="24"/>
+        <image name="worker" width="24" height="24"/>
     </resources>
 </document>

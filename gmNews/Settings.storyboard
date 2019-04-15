@@ -42,7 +42,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="moO-7a-RBe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="i4l-L3-xX1"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="worker" id="i4l-L3-xX1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA0-Qb-qoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,4 +50,7 @@
             <point key="canvasLocation" x="60" y="166.8665667166417"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="worker" width="24" height="24"/>
+    </resources>
 </document>
