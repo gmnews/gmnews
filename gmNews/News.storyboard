@@ -59,7 +59,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="News" id="q4A-Ab-wVf"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" id="q4A-Ab-wVf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFr-nt-cwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,4 +67,7 @@
             <point key="canvasLocation" x="144.80000000000001" y="-106.59670164917542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="newspaper" width="24" height="24"/>
+    </resources>
 </document>
