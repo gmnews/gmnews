@@ -3,15 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */; };
 		0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */; };
+		521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067C92262DA88007954AB /* selectWeekdaysViewController.swift */; };
+		521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067CB2262DB0E007954AB /* alarmLabelViewController.swift */; };
+		523D624D225BE0B200D4FE43 /* CreateAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */; };
+		529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */; };
 		52990F67224EF23B000426FF /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F66224EF23B000426FF /* News.storyboard */; };
 		52990F69224EF246000426FF /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F68224EF246000426FF /* Alarm.storyboard */; };
 		52990F6B224EF264000426FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F6A224EF264000426FF /* Settings.storyboard */; };
+		52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A59A66225E838700B628AC /* AlarmTableViewController.swift */; };
 		52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B0D224C2FF30025F9B2 /* AppDelegate.swift */; };
 		52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B0F224C2FF30025F9B2 /* ViewController.swift */; };
 		52E82B13224C2FF30025F9B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E82B11224C2FF30025F9B2 /* Main.storyboard */; };
@@ -19,6 +24,8 @@
 		52E82B18224C2FF50025F9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E82B16224C2FF50025F9B2 /* LaunchScreen.storyboard */; };
 		52E82B23224C2FF50025F9B2 /* gmNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B22224C2FF50025F9B2 /* gmNewsTests.swift */; };
 		52E82B2E224C2FF50025F9B2 /* gmNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B2D224C2FF50025F9B2 /* gmNewsUITests.swift */; };
+		52E930E422630CDE008AE8A8 /* SelectSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E930E322630CDE008AE8A8 /* SelectSoundViewController.swift */; };
+		52E930E6226313FD008AE8A8 /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E930E5226313FD008AE8A8 /* SoundTableViewController.swift */; };
 		9B753298352E7FA013BFB6E7 /* Pods_gmNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADA4488F32BBBB0222B468B /* Pods_gmNewsTests.framework */; };
 		A37F693454871D99118C7E42 /* Pods_gmNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A216B595BEB9187562077A /* Pods_gmNewsUITests.framework */; };
 		DC338C3522592AA100315326 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC338C3422592AA100315326 /* LoginViewController.swift */; };
@@ -51,9 +58,14 @@
 		1F6B0C922CF08A48588FFDC3 /* Pods-gmNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-gmNewsTests/Pods-gmNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FFC85E9F88A7BF918D8BB15 /* Pods_gmNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gmNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7E0C7B837CC79451940DAB /* Pods-gmNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsTests.release.xcconfig"; path = "Target Support Files/Pods-gmNewsTests/Pods-gmNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		521067C92262DA88007954AB /* selectWeekdaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectWeekdaysViewController.swift; sourceTree = "<group>"; };
+		521067CB2262DB0E007954AB /* alarmLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmLabelViewController.swift; sourceTree = "<group>"; };
+		523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmViewController.swift; sourceTree = "<group>"; };
+		529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysTableViewController.swift; sourceTree = "<group>"; };
 		52990F66224EF23B000426FF /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		52990F68224EF246000426FF /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		52990F6A224EF264000426FF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		52A59A66225E838700B628AC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		52E82B0A224C2FF30025F9B2 /* gmNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gmNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E82B0D224C2FF30025F9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E82B0F224C2FF30025F9B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +79,8 @@
 		52E82B29224C2FF50025F9B2 /* gmNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gmNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E82B2D224C2FF50025F9B2 /* gmNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gmNewsUITests.swift; sourceTree = "<group>"; };
 		52E82B2F224C2FF50025F9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E930E322630CDE008AE8A8 /* SelectSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSoundViewController.swift; sourceTree = "<group>"; };
+		52E930E5226313FD008AE8A8 /* SoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
 		80A216B595BEB9187562077A /* Pods_gmNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gmNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1CA5977214C6A385B0EB9B /* Pods-gmNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNews.debug.xcconfig"; path = "Target Support Files/Pods-gmNews/Pods-gmNews.debug.xcconfig"; sourceTree = "<group>"; };
 		AACA9E564A50AF22C1097302 /* Pods-gmNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNews.release.xcconfig"; path = "Target Support Files/Pods-gmNews/Pods-gmNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +178,13 @@
 				DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */,
 				0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */,
 				0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */,
+				523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */,
+				521067C92262DA88007954AB /* selectWeekdaysViewController.swift */,
+				52A59A66225E838700B628AC /* AlarmTableViewController.swift */,
+				529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */,
+				521067CB2262DB0E007954AB /* alarmLabelViewController.swift */,
+				52E930E322630CDE008AE8A8 /* SelectSoundViewController.swift */,
+				52E930E5226313FD008AE8A8 /* SoundTableViewController.swift */,
 			);
 			path = gmNews;
 			sourceTree = "<group>";
@@ -326,24 +347,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-gmNews/Pods-gmNews-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/NewsAPISwift/NewsAPISwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-gmNews/Pods-gmNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NewsAPISwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-gmNews/Pods-gmNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -424,10 +432,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC338C3522592AA100315326 /* LoginViewController.swift in Sources */,
+				521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */,
+				52E930E422630CDE008AE8A8 /* SelectSoundViewController.swift in Sources */,
 				52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */,
+				52E930E6226313FD008AE8A8 /* SoundTableViewController.swift in Sources */,
+				523D624D225BE0B200D4FE43 /* CreateAlarmViewController.swift in Sources */,
 				52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */,
 				0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */,
+				521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */,
+				52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */,
 				0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */,
+				529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */,
 				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
