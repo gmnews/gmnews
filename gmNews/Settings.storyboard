@@ -44,10 +44,21 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="worker" id="i4l-L3-xX1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bL8-Rs-Jsq" kind="presentation" identifier="returnToLoginSegue" id="hCD-5h-7oF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA0-Qb-qoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60" y="166.8665667166417"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="a2e-Hd-Ldt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="bL8-Rs-Jsq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKT-ru-Yhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="166"/>
         </scene>
     </scenes>
     <resources>

@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onLogout(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "returnToLoginSegue", sender: nil)
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
     
