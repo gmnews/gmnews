@@ -7,17 +7,10 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
-    }
-    
-
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -30,8 +23,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
 
         // Connect data:
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        self.countryPicker.delegate = self
+        self.countryPicker.dataSource = self
         
         pickerData = [
             "United Arab Emirates",
@@ -96,19 +89,33 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
-    // Number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -&gt; Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
-    private func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-
+    @IBAction func onSignUp(_ sender: Any) {
+        var user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        user.email = emailField.text
+        
+        user.signUpInBackground{ (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "SignUpToSourcesSegue", sender: nil)
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+    }
+    
+    @IBAction func onCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
