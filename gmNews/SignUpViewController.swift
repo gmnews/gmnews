@@ -17,7 +17,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var countryPicker: UIPickerView!
     
     var pickerData: [String] = [String]()
-    
+    var selectedRow: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,11 +100,16 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRow = row
+    }
     @IBAction func onSignUp(_ sender: Any) {
         var user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
         user.email = emailField.text
+        user["country"] = pickerData[selectedRow]
         
         user.signUpInBackground{ (success, error) in
             if success {
