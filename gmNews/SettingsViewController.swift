@@ -7,28 +7,32 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Retrieve user info from parse database
+        let name = PFUser.current()?.object(forKey: "name") as? String
+        let username = PFUser.current()?.username
+        let country = PFUser.current()?.object(forKey: "country") as? String
+        let email = PFUser.current()?.email
+        
+        // Set labels on UI to retrieved user info
+        usernameLabel.text = username
+        countryLabel.text = country
+        emailLabel.text = email
     }
     
     @IBAction func onLogout(_ sender: Any) {
         self.performSegue(withIdentifier: "returnToLoginSegue", sender: nil)
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
