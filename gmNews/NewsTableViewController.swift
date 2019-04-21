@@ -31,7 +31,6 @@ class NewsTableViewController: UITableViewController {
         newsAPI.getTopHeadlines(country: .us) { result in
             switch result {
             case .success(let headlines):
-                print(headlines)
                 self.articles = headlines
             case .failure(let error):
                 print(error)
