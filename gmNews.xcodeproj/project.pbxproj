@@ -11,7 +11,13 @@
 		0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */; };
 		521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067C92262DA88007954AB /* selectWeekdaysViewController.swift */; };
 		521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067CB2262DB0E007954AB /* alarmLabelViewController.swift */; };
+		522ED5BA226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ED5B9226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift */; };
+		522ED5BC226A84CC00DA354C /* LabelToAlarmTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ED5BB226A84CC00DA354C /* LabelToAlarmTableDelegate.swift */; };
+		522ED5BE226AEF2500DA354C /* SoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ED5BD226AEF2500DA354C /* SoundDelegate.swift */; };
+		522ED5C0226AF17500DA354C /* SoundToAlarmTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ED5BF226AF17500DA354C /* SoundToAlarmTableDelegate.swift */; };
+		522ED5C2226AF32A00DA354C /* AlarmDetailsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */; };
 		523D624D225BE0B200D4FE43 /* CreateAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */; };
+		52486D852267D22F0011E54F /* WeekdayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52486D842267D22F0011E54F /* WeekdayDelegate.swift */; };
 		529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */; };
 		52990F67224EF23B000426FF /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F66224EF23B000426FF /* News.storyboard */; };
 		52990F69224EF246000426FF /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F68224EF246000426FF /* Alarm.storyboard */; };
@@ -60,7 +66,13 @@
 		4B7E0C7B837CC79451940DAB /* Pods-gmNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsTests.release.xcconfig"; path = "Target Support Files/Pods-gmNewsTests/Pods-gmNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		521067C92262DA88007954AB /* selectWeekdaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectWeekdaysViewController.swift; sourceTree = "<group>"; };
 		521067CB2262DB0E007954AB /* alarmLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmLabelViewController.swift; sourceTree = "<group>"; };
+		522ED5B9226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayToAlarmTableDelegate.swift; sourceTree = "<group>"; };
+		522ED5BB226A84CC00DA354C /* LabelToAlarmTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelToAlarmTableDelegate.swift; sourceTree = "<group>"; };
+		522ED5BD226AEF2500DA354C /* SoundDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDelegate.swift; sourceTree = "<group>"; };
+		522ED5BF226AF17500DA354C /* SoundToAlarmTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundToAlarmTableDelegate.swift; sourceTree = "<group>"; };
+		522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailsDelegate.swift; sourceTree = "<group>"; };
 		523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmViewController.swift; sourceTree = "<group>"; };
+		52486D842267D22F0011E54F /* WeekdayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayDelegate.swift; sourceTree = "<group>"; };
 		529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysTableViewController.swift; sourceTree = "<group>"; };
 		52990F66224EF23B000426FF /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		52990F68224EF246000426FF /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
@@ -180,11 +192,17 @@
 				0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */,
 				523D624C225BE0B200D4FE43 /* CreateAlarmViewController.swift */,
 				521067C92262DA88007954AB /* selectWeekdaysViewController.swift */,
-				52A59A66225E838700B628AC /* AlarmTableViewController.swift */,
 				529372A3225FF7EB007CE280 /* WeekdaysTableViewController.swift */,
+				52A59A66225E838700B628AC /* AlarmTableViewController.swift */,
 				521067CB2262DB0E007954AB /* alarmLabelViewController.swift */,
 				52E930E322630CDE008AE8A8 /* SelectSoundViewController.swift */,
 				52E930E5226313FD008AE8A8 /* SoundTableViewController.swift */,
+				52486D842267D22F0011E54F /* WeekdayDelegate.swift */,
+				522ED5B9226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift */,
+				522ED5BB226A84CC00DA354C /* LabelToAlarmTableDelegate.swift */,
+				522ED5BD226AEF2500DA354C /* SoundDelegate.swift */,
+				522ED5BF226AF17500DA354C /* SoundToAlarmTableDelegate.swift */,
+				522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */,
 			);
 			path = gmNews;
 			sourceTree = "<group>";
@@ -434,16 +452,22 @@
 				DC338C3522592AA100315326 /* LoginViewController.swift in Sources */,
 				521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */,
 				52E930E422630CDE008AE8A8 /* SelectSoundViewController.swift in Sources */,
+				522ED5C2226AF32A00DA354C /* AlarmDetailsDelegate.swift in Sources */,
 				52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */,
 				52E930E6226313FD008AE8A8 /* SoundTableViewController.swift in Sources */,
+				522ED5BA226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift in Sources */,
+				52486D852267D22F0011E54F /* WeekdayDelegate.swift in Sources */,
 				523D624D225BE0B200D4FE43 /* CreateAlarmViewController.swift in Sources */,
 				52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */,
 				0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */,
+				522ED5C0226AF17500DA354C /* SoundToAlarmTableDelegate.swift in Sources */,
 				521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */,
 				52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */,
 				0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */,
+				522ED5BC226A84CC00DA354C /* LabelToAlarmTableDelegate.swift in Sources */,
 				529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */,
 				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
+				522ED5BE226AEF2500DA354C /* SoundDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

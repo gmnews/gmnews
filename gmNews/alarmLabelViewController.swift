@@ -12,17 +12,19 @@ class alarmLabelViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var alarmLabelTextField: UITextField!
     
+    var delegate: LabelToAlarmDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         alarmLabelTextField.delegate = self
         
         alarmLabelTextField.returnKeyType = UIReturnKeyType.done
-        // Do any additional setup after loading the view.
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         alarmLabelTextField.resignFirstResponder()
+        delegate?.selectedLabel(label: alarmLabelTextField.text!)
         self.dismiss(animated: true, completion: nil)
         return false
     }

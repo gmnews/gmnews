@@ -91,6 +91,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timePicker" destination="v7K-12-ABm" id="RKK-bJ-a8F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqc-2K-4GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +127,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eeL-0M-6zO" kind="presentation" id="2za-KD-7z9"/>
+                                            <segue destination="eeL-0M-6zO" kind="presentation" identifier="CreateAlarmToRepeat" id="IS5-6I-bf9"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Mwt-bS-tQN">
@@ -144,7 +147,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="tBZ-7w-I5H" kind="presentation" id="H6A-mI-hWP"/>
+                                            <segue destination="tBZ-7w-I5H" kind="presentation" identifier="CreateAlarmToLabel" id="H6A-mI-hWP"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="vC7-kw-QUZ">
@@ -164,7 +167,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="77d-zx-xRU" kind="presentation" id="fNM-tx-NW6"/>
+                                            <segue destination="77d-zx-xRU" kind="presentation" identifier="CreateAlarmToSound" id="fNM-tx-NW6"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -202,7 +205,7 @@
                                     <navigationItem title="Title" id="2Vq-nl-xFB">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="2CF-Ig-gPm">
                                             <connections>
-                                                <action selector="onDone:" destination="eeL-0M-6zO" id="ZGp-qz-ZKa"/>
+                                                <action selector="onDone:" destination="eeL-0M-6zO" id="O2y-s8-XpO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -221,7 +224,7 @@
         <!--Weekdays Table View Controller-->
         <scene sceneID="eyg-mO-veV">
             <objects>
-                <tableViewController id="E60-aE-1mH" customClass="WeekdaysTableViewController" customModule="gmNews" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WeekdaysTableView" id="E60-aE-1mH" customClass="WeekdaysTableViewController" customModule="gmNews" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tbL-Wf-oTu">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

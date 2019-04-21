@@ -9,15 +9,24 @@
 import UIKit
 
 class SelectSoundViewController: UIViewController {
+    
+    var delegate:SoundToAlarmTableDelegate?
+    
+    var alarmSound: String?
+    private var soundTableViewController: SoundTableViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let soundController = childViewControllers.first as? SoundTableViewController
+        soundTableViewController = soundController
+        soundController?.delegate = self
     }
     
 
     @IBAction func onDone(_ sender: Any) {
+        soundTableViewController?.sendSound()
+        delegate?.sendSound(sound: alarmSound!)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -31,4 +40,12 @@ class SelectSoundViewController: UIViewController {
     }
     */
 
+}
+
+extension SelectSoundViewController: SoundDelegate {
+    func selectedSound(sound: String) {
+        alarmSound = sound
+    }
+    
+    
 }
