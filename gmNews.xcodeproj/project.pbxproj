@@ -36,6 +36,8 @@
 		A37F693454871D99118C7E42 /* Pods_gmNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A216B595BEB9187562077A /* Pods_gmNewsUITests.framework */; };
 		DC338C3522592AA100315326 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC338C3422592AA100315326 /* LoginViewController.swift */; };
 		DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */; };
+		DC65BB8F22653D4C00539A77 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC65BB8E22653D4C00539A77 /* SignUpViewController.swift */; };
+		DC65BB912265540000539A77 /* AddSourcesPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC65BB902265540000539A77 /* AddSourcesPopUpViewController.swift */; };
 		F83809AAA64D7C342E8FFE03 /* Pods_gmNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFC85E9F88A7BF918D8BB15 /* Pods_gmNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		AACA9E564A50AF22C1097302 /* Pods-gmNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNews.release.xcconfig"; path = "Target Support Files/Pods-gmNews/Pods-gmNews.release.xcconfig"; sourceTree = "<group>"; };
 		DC338C3422592AA100315326 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC3D33BA22597E6E007D2581 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DC65BB8E22653D4C00539A77 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DC65BB902265540000539A77 /* AddSourcesPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourcesPopUpViewController.swift; sourceTree = "<group>"; };
 		E83E679FD280E38E8F384DBD /* Pods-gmNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-gmNewsUITests/Pods-gmNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +207,8 @@
 				522ED5BD226AEF2500DA354C /* SoundDelegate.swift */,
 				522ED5BF226AF17500DA354C /* SoundToAlarmTableDelegate.swift */,
 				522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */,
+				DC65BB8E22653D4C00539A77 /* SignUpViewController.swift */,
+				DC65BB902265540000539A77 /* AddSourcesPopUpViewController.swift */,
 			);
 			path = gmNews;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */,
 				52E930E422630CDE008AE8A8 /* SelectSoundViewController.swift in Sources */,
 				522ED5C2226AF32A00DA354C /* AlarmDetailsDelegate.swift in Sources */,
+				DC65BB912265540000539A77 /* AddSourcesPopUpViewController.swift in Sources */,
 				52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */,
 				52E930E6226313FD008AE8A8 /* SoundTableViewController.swift in Sources */,
 				522ED5BA226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift in Sources */,
@@ -461,6 +468,7 @@
 				52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */,
 				0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */,
 				522ED5C0226AF17500DA354C /* SoundToAlarmTableDelegate.swift in Sources */,
+				DC65BB8F22653D4C00539A77 /* SignUpViewController.swift in Sources */,
 				521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */,
 				52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */,
 				0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */,

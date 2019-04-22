@@ -6,6 +6,7 @@
 //  Copyright © 2019 Martin Landin. All rights reserved.
 
 import UIKit
+import UserNotifications
 
 class CreateAlarmViewController: UIViewController{
     
@@ -34,14 +35,40 @@ class CreateAlarmViewController: UIViewController{
     
     
     @IBAction func onSave(_ sender: Any) {
+        alarmTableViewController?.sendAlarmDetails()
+        
+        
         let date = timePicker.date
-        print("Date is \(date)")
         let components = Calendar.current.dateComponents([.hour, .minute], from: date)
-        print(components.hour!)
-        print(components.minute!)
-        //alarmTableViewController?.sendAlarmDetails()
-        //print("Saved")
-        //self.dismiss(animated: true, completion: nil)
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = alarmLabel!
+        content.sound = UNNotificationSound.default()
+        content.threadIdentifier = alarmLabel!
+        
+        
+        var dayCounter = 1
+        for day in weekdays {
+            if(day) {
+                let alarmComponent = DateComponents(hour: components.hour, minute: components.minute, weekday: dayCounter)
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: alarmComponent, repeats: false)
+                
+                let request = UNNotificationRequest(identifier: alarmLabel!, content: content, trigger: trigger)
+                
+                center.add(request) { (error) in
+                    if error != nil {
+                        print(error!)
+                    }
+                }
+            }
+            dayCounter += 1
+        }
+        print("Alarm Created")
+        self.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
@@ -61,19 +88,6 @@ extension CreateAlarmViewController: AlarmDetailsDelegate {
         alarmLabel = label
         alarmSound = sound
         
-        print("Sunday: \(weekdays[0])")
-        print("Monday: \(weekdays[1])")
-        print("Tuesday: \(weekdays[2])")
-        print("Wednesday: \(weekdays[3])")
-        print("Thursday: \(weekdays[4])")
-        print("Friday: \(weekdays[5])")
-        print("Saturday: \(weekdays[6])")
-        
-        print("Label is \(label)")
-        
-        print("Sound is \(alarmSound!)")
-        
     }
-    
     
 }

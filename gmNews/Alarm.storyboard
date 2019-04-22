@@ -31,7 +31,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WMK-Ks-oUf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Alarm" id="46F-NH-o3p"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-clock" id="46F-NH-o3p"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNJ-4P-ZN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -569,4 +569,7 @@
             <point key="canvasLocation" x="2912.8000000000002" y="2396.8515742128939"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm-clock" width="24" height="24"/>
+    </resources>
 </document>

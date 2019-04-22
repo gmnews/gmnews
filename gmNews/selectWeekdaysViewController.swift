@@ -53,7 +53,6 @@ class selectWeekdaysViewController: UIViewController {
 
 extension selectWeekdaysViewController: WeekdayDelegate {
     func weekdaysSelected(days: [Bool]) {
-        
         weekdays = days
     }
 }
