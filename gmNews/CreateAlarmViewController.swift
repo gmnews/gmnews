@@ -4,17 +4,26 @@
 //
 //  Created by Martin Landin on 4/8/19.
 //  Copyright © 2019 Martin Landin. All rights reserved.
-//
 
 import UIKit
+import UserNotifications
 
-class CreateAlarmViewController: UIViewController/*, UIPickerViewDelegate, UIPickerViewDataSource*/ {
+class CreateAlarmViewController: UIViewController{
     
+    @IBOutlet weak var timePicker: UIDatePicker!
+    
+    var weekdays = [Bool]()
+    var alarmLabel:String?
+    var alarmSound:String?
+    
+    var alarmTableViewController:AlarmTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let alarmController = childViewControllers.first as? AlarmTableViewController
+        alarmTableViewController = alarmController
+        alarmController?.delegate = self
     }
     
     
@@ -26,6 +35,39 @@ class CreateAlarmViewController: UIViewController/*, UIPickerViewDelegate, UIPic
     
     
     @IBAction func onSave(_ sender: Any) {
+        alarmTableViewController?.sendAlarmDetails()
+        
+        
+        let date = timePicker.date
+        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = alarmLabel!
+        content.sound = UNNotificationSound.default()
+        content.threadIdentifier = alarmLabel!
+        
+        
+        var dayCounter = 1
+        for day in weekdays {
+            if(day) {
+                let alarmComponent = DateComponents(hour: components.hour, minute: components.minute, weekday: dayCounter)
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: alarmComponent, repeats: false)
+                
+                let request = UNNotificationRequest(identifier: alarmLabel!, content: content, trigger: trigger)
+                
+                center.add(request) { (error) in
+                    if error != nil {
+                        print(error!)
+                    }
+                }
+            }
+            dayCounter += 1
+        }
+        print("Alarm Created")
         self.dismiss(animated: true, completion: nil)
     }
     /*
@@ -38,4 +80,14 @@ class CreateAlarmViewController: UIViewController/*, UIPickerViewDelegate, UIPic
     }
     */
 
+}
+
+extension CreateAlarmViewController: AlarmDetailsDelegate {
+    func alarmDetails(repeatDays: [Bool], label: String, sound: String) {
+        weekdays = repeatDays
+        alarmLabel = label
+        alarmSound = sound
+        
+    }
+    
 }
