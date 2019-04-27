@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0239E1CB226D047F00075290 /* NewsSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239E1CA226D047F00075290 /* NewsSourceCell.swift */; };
 		0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */; };
 		0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */; };
 		521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067C92262DA88007954AB /* selectWeekdaysViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0239E1CA226D047F00075290 /* NewsSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSourceCell.swift; sourceTree = "<group>"; };
 		0ADA4488F32BBBB0222B468B /* Pods_gmNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gmNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */,
 				DC65BB8E22653D4C00539A77 /* SignUpViewController.swift */,
 				DC65BB902265540000539A77 /* AddSourcesPopUpViewController.swift */,
+				0239E1CA226D047F00075290 /* NewsSourceCell.swift */,
 			);
 			path = gmNews;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */,
 				0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */,
 				522ED5BC226A84CC00DA354C /* LabelToAlarmTableDelegate.swift in Sources */,
+				0239E1CB226D047F00075290 /* NewsSourceCell.swift in Sources */,
 				529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */,
 				52A300B42270EA2A005352D2 /* ViewAlarmDelegate.swift in Sources */,
 				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
