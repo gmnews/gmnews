@@ -15,6 +15,7 @@ class selectWeekdaysViewController: UIViewController {
     private var weekdayTableViewController: WeekdaysTableViewController?
     
     var weekdays = [Bool]()
+    var selectedDaysString = ""
     
     var delegate: WeekdayToAlarmTableDelegate?
 
@@ -32,7 +33,7 @@ class selectWeekdaysViewController: UIViewController {
 
     @IBAction func onDone(_ sender: Any) {
         weekdayTableViewController?.sendDays()
-        delegate?.selectedDays(days: weekdays)
+        delegate?.selectedDays(days: weekdays,  selectedDays: selectedDaysString)
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -54,5 +55,33 @@ class selectWeekdaysViewController: UIViewController {
 extension selectWeekdaysViewController: WeekdayDelegate {
     func weekdaysSelected(days: [Bool]) {
         weekdays = days
+        
+        var dayCounter = 1
+        
+        for day in days {
+            if(day) {
+                switch dayCounter {
+                case 1:
+                    selectedDaysString.append("Sun ")
+                case 2:
+                    selectedDaysString.append("Mon ")
+                case 3:
+                    selectedDaysString.append("Tues ")
+                case 4:
+                    selectedDaysString.append("Wed ")
+                case 5:
+                    selectedDaysString.append("Thurs ")
+                case 6:
+                    selectedDaysString.append("Fri ")
+                case 7:
+                    selectedDaysString.append("Sat ")
+                default:
+                    break
+                }
+            }
+            
+            dayCounter += 1
+        }
+        
     }
 }

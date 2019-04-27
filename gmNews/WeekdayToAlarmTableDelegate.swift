@@ -7,5 +7,5 @@
 //
 
 protocol WeekdayToAlarmTableDelegate {
-    func selectedDays(days: [Bool])
+    func selectedDays(days: [Bool], selectedDays: String)
 }
