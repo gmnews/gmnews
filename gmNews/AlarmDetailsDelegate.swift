@@ -7,5 +7,5 @@
 //
 
 protocol AlarmDetailsDelegate {
-    func alarmDetails(repeatDays: [Bool], label:String, sound:String)
+    func alarmDetails(repeatDays: [Bool], label:String, sound:String, selectedDays: String)
 }

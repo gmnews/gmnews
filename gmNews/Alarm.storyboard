@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ykw-8M-TEW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82L-zT-91g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,32 +11,82 @@
     </dependencies>
     <scenes>
         <!--Alarm-->
-        <scene sceneID="TJ9-aM-h1c">
+        <scene sceneID="IDH-by-nzz">
             <objects>
-                <viewController id="Ykw-8M-TEW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sM5-hK-XvJ">
+                <tableViewController id="O2b-hv-CCN" customClass="DisplayAlarmsTableViewController" customModule="gmNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="csZ-9m-Xkc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MC1-3I-n1Q">
-                                <rect key="frame" x="80" y="121" width="215" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Create Alarm"/>
-                                <connections>
-                                    <segue destination="7h9-bB-rpc" kind="presentation" id="rqo-y5-weD"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="WMK-Ks-oUf"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-clock" id="46F-NH-o3p"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNJ-4P-ZN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" rowHeight="98" id="CGS-CB-eKL" customClass="AlarmTableViewCell" customModule="gmNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CGS-CB-eKL" id="mqn-1Q-ekX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-mh-7Pg">
+                                            <rect key="frame" x="16" y="5" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0In-vH-RHe">
+                                            <rect key="frame" x="16" y="30" width="59.5" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tues, Thurs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRV-3h-QUA">
+                                            <rect key="frame" x="16" y="68" width="90" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50l-bO-AbU">
+                                            <rect key="frame" x="78.5" y="34" width="32" height="26"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0In-vH-RHe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cNG-mh-7Pg" secondAttribute="bottom" constant="4" id="DRS-3T-P4W"/>
+                                        <constraint firstItem="cNG-mh-7Pg" firstAttribute="top" secondItem="mqn-1Q-ekX" secondAttribute="top" constant="5" id="ETC-87-B87"/>
+                                        <constraint firstItem="50l-bO-AbU" firstAttribute="leading" secondItem="0In-vH-RHe" secondAttribute="trailing" constant="3" id="FIv-J6-kge"/>
+                                        <constraint firstItem="0In-vH-RHe" firstAttribute="leading" secondItem="cNG-mh-7Pg" secondAttribute="leading" id="Joh-Zk-2o3"/>
+                                        <constraint firstItem="50l-bO-AbU" firstAttribute="centerY" secondItem="0In-vH-RHe" secondAttribute="centerY" id="NqF-xT-jLh"/>
+                                        <constraint firstItem="0In-vH-RHe" firstAttribute="leading" secondItem="mRV-3h-QUA" secondAttribute="leading" id="ejn-Op-Ycd"/>
+                                        <constraint firstItem="cNG-mh-7Pg" firstAttribute="leading" secondItem="mqn-1Q-ekX" secondAttribute="leading" constant="16" id="lOq-Ka-rnF"/>
+                                        <constraint firstItem="mRV-3h-QUA" firstAttribute="top" secondItem="0In-vH-RHe" secondAttribute="bottom" constant="4" id="lgQ-7E-2aG"/>
+                                        <constraint firstItem="50l-bO-AbU" firstAttribute="top" secondItem="mqn-1Q-ekX" secondAttribute="topMargin" constant="23" id="xeQ-QX-C0S"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alarmNameLabel" destination="cNG-mh-7Pg" id="oo8-9W-iNp"/>
+                                    <outlet property="amPmLabel" destination="50l-bO-AbU" id="dOD-os-iyB"/>
+                                    <outlet property="dayLabel" destination="mRV-3h-QUA" id="rrF-EH-o55"/>
+                                    <outlet property="timeLabel" destination="0In-vH-RHe" id="uWO-Ke-LqH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O2b-hv-CCN" id="FwP-vi-C6E"/>
+                            <outlet property="delegate" destination="O2b-hv-CCN" id="WXW-SV-S5y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Alarm" id="gs0-u6-79E">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="U5C-hz-17U">
+                            <connections>
+                                <segue destination="7h9-bB-rpc" kind="presentation" identifier="ViewAlarmToCreateAlarm" id="Jl3-AK-hVc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsD-Pg-Gsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231.19999999999999" y="103.89805097451276"/>
+            <point key="canvasLocation" x="597.60000000000002" y="103.89805097451276"/>
         </scene>
         <!--Create Alarm-->
         <scene sceneID="xWC-P9-bH2">
@@ -181,7 +231,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GC-Et-xSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="851"/>
+            <point key="canvasLocation" x="2127" y="794"/>
         </scene>
         <!--Repeat-->
         <scene sceneID="Qgb-Ia-gW0">
@@ -567,6 +617,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBC-Ht-3YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2912.8000000000002" y="2396.8515742128939"/>
+        </scene>
+        <!--Alarm-->
+        <scene sceneID="A9H-ah-heS">
+            <objects>
+                <navigationController title="Alarm" automaticallyAdjustsScrollViewInsets="NO" id="82L-zT-91g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-clock" id="BPd-uQ-F5J"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fGE-oy-Zhq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O2b-hv-CCN" kind="relationship" relationship="rootViewController" id="uNr-ax-HU4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8O-wf-LkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-290" y="104"/>
         </scene>
     </scenes>
     <resources>

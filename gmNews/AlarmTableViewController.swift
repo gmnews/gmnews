@@ -13,18 +13,18 @@ class AlarmTableViewController: UITableViewController {
     var weekdays = [Bool]()
     var alarmLabel:String?
     var alarmSound:String?
+    var selectedDaysString = ""
     
     var delegate:AlarmDetailsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.isScrollEnabled = false
         
     }
     
     func sendAlarmDetails() {
-        delegate?.alarmDetails(repeatDays: weekdays, label: alarmLabel!, sound: alarmSound!)
+        delegate?.alarmDetails(repeatDays: weekdays, label: alarmLabel!, sound: alarmSound!, selectedDays: selectedDaysString)
     }
     
 
@@ -55,7 +55,9 @@ class AlarmTableViewController: UITableViewController {
 }
 
 extension AlarmTableViewController: WeekdayToAlarmTableDelegate {
-    func selectedDays(days: [Bool]) {
+    
+    func selectedDays(days: [Bool], selectedDays: String) {
+        selectedDaysString = selectedDays
         weekdays = days
     }
 }

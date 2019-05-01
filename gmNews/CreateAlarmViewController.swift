@@ -15,6 +15,7 @@ class CreateAlarmViewController: UIViewController{
     var weekdays = [Bool]()
     var alarmLabel:String?
     var alarmSound:String?
+    var selectedDaysString = ""
     
     var alarmTableViewController:AlarmTableViewController?
     
@@ -24,6 +25,7 @@ class CreateAlarmViewController: UIViewController{
         let alarmController = childViewControllers.first as? AlarmTableViewController
         alarmTableViewController = alarmController
         alarmController?.delegate = self
+        
     }
     
     
@@ -51,11 +53,12 @@ class CreateAlarmViewController: UIViewController{
         
         
         var dayCounter = 1
+        
         for day in weekdays {
             if(day) {
                 let alarmComponent = DateComponents(hour: components.hour, minute: components.minute, weekday: dayCounter)
                 
-                let trigger = UNCalendarNotificationTrigger(dateMatching: alarmComponent, repeats: false)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: alarmComponent, repeats: true)
                 
                 let request = UNNotificationRequest(identifier: alarmLabel!, content: content, trigger: trigger)
                 
@@ -64,10 +67,37 @@ class CreateAlarmViewController: UIViewController{
                         print(error!)
                     }
                 }
+                
             }
             dayCounter += 1
         }
+        
+        var hour = components.hour!
+        let minutes = components.minute!
+        var ampm = ""
+        
+        if(hour > 12) {
+            hour -= 12
+            ampm = "PM"
+        } else {
+            ampm = "AM"
+        }
+        
+        let hourString = String(format: "%02d:%02d", hour, minutes)
+        
+        if var setAlarms = UserDefaults.standard.dictionary(forKey: "Alarms") {
+            let alarmDetails = [alarmLabel!, selectedDaysString, hourString, ampm]
+            setAlarms[alarmLabel!] = alarmDetails
+            UserDefaults.standard.set(setAlarms, forKey: "Alarms")
+        } else {
+            var setAlarms = [String: [String]]()
+            let alarmDetails = [alarmLabel!, selectedDaysString, hourString, ampm]
+            setAlarms[alarmLabel!] = alarmDetails
+            UserDefaults.standard.set(setAlarms, forKey: "Alarms")
+        }
+        
         print("Alarm Created")
+        
         self.dismiss(animated: true, completion: nil)
     }
     /*
@@ -83,10 +113,12 @@ class CreateAlarmViewController: UIViewController{
 }
 
 extension CreateAlarmViewController: AlarmDetailsDelegate {
-    func alarmDetails(repeatDays: [Bool], label: String, sound: String) {
+    
+    func alarmDetails(repeatDays: [Bool], label: String, sound: String, selectedDays: String) {
         weekdays = repeatDays
         alarmLabel = label
         alarmSound = sound
+        selectedDaysString = selectedDays
         
     }
     
