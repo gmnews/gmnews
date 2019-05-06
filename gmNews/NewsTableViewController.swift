@@ -8,6 +8,7 @@
 
 import UIKit
 import NewsAPISwift
+import Parse
 
 class NewsTableViewController: UITableViewController {
     
@@ -28,7 +29,11 @@ class NewsTableViewController: UITableViewController {
     
     
     func loadNews(){
-        newsAPI.getTopHeadlines(country: .us) { result in
+        let country = PFUser.current()?.object(forKey: "country") as? String
+        let abr = country?.prefix(2).lowercased()
+        //print(String(abr!))
+        
+        newsAPI.getTopHeadlines(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
             switch result {
             case .success(let headlines):
                 self.articles = headlines

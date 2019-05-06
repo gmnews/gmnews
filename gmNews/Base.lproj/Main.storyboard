@@ -58,8 +58,8 @@
                                 <color key="textColor" red="0.99769014120101929" green="0.26344621181488037" blue="0.15566748380661011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start the morning off right." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRY-TL-yvb">
-                                <rect key="frame" x="79" y="482" width="205" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start your morning off right." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRY-TL-yvb">
+                                <rect key="frame" x="79" y="482" width="215" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.64559024180000002" blue="0.49070855689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -387,6 +387,6 @@
         <image name="worker" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j4v-Sg-dte"/>
+        <segue reference="awH-RS-wiY"/>
     </inferredMetricsTieBreakers>
 </document>
