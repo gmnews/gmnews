@@ -28,10 +28,10 @@
 
 * Sign-Up/Sign-In/Log Out :heavy_check_mark:
 * Add/remove news sources 
-* View news sources
+* View news sources :heavy_check_mark:
 * View news articles :heavy_check_mark:
-* Create alarms
-* Turn off alarms
+* Create alarms :heavy_check_mark:
+* Turn off alarms :heavy_check_mark:
 * Show full article when pressed
 * History/saved articles
 
@@ -44,7 +44,7 @@
 
 ### 2. Screen Archetypes
 
-* Sign-Up/Sign-In Screen
+* Sign-Up/Sign-In Screen :heavy_check_mark:
    * User will either sign in or sign up
    * After signing in, will redirect to home screen
 * Home Screen
