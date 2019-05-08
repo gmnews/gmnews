@@ -27,12 +27,12 @@
 **Required Must-have Stories**
 
 * Sign-Up/Sign-In/Log Out :heavy_check_mark:
-* Add/remove news sources 
+* Add/remove news sources :heavy_check_mark:
 * View news sources :heavy_check_mark:
 * View news articles :heavy_check_mark:
 * Create alarms :heavy_check_mark:
 * Turn off alarms :heavy_check_mark:
-* Show full article when pressed
+* Show full article when pressed :heavy_check_mark:
 * History/saved articles
 
 **Optional Nice-to-have Stories**
@@ -47,12 +47,12 @@
 * Sign-Up/Sign-In Screen :heavy_check_mark:
    * User will either sign in or sign up
    * After signing in, will redirect to home screen
-* Home Screen
+* Home Screen :heavy_check_mark:
    * User can view news
    * User can tap article to read it in full
-* Profile/Settings Screen
+* Profile/Settings Screen :heavy_check_mark:
    * User can edit news sources
-* Alarm Screen
+* Alarm Screen :heavy_check_mark:
    * User can edit alarms
 
 ### 3. Navigation
