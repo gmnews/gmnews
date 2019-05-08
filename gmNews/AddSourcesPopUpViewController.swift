@@ -20,6 +20,8 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
             }
         }
     }
+    
+    var selectedSources: [String] = []
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func onSkip(_ sender: Any) {
@@ -31,6 +33,7 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = true
         
         loadSources()
     }
@@ -38,7 +41,7 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
     func loadSources() {
         let country = PFUser.current()?.object(forKey: "country") as? String
         let abr = country?.prefix(2).lowercased()
-        //print(String(abr!))
+        print(String(abr!))
         
         newsAPI.getSources(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
             switch result{
@@ -61,8 +64,30 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
         let source = sources[indexPath.item]
         
         cell.sourceName?.text = source.name
+        //cell.sourceId = source.id
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
 
+        let sCell = sources[indexPath.item]
+        selectedSources.append(sCell.id)
+        
+        cell.backgroundColor = UIColor.orange
+        cell.layer.borderWidth = 2
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let unselectedCell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+
+        let uCell = sources[indexPath.item]
+        if let index = selectedSources.firstIndex(of: uCell.id){
+            selectedSources.remove(at: index)
+        }
+
+        unselectedCell.backgroundColor = UIColor.clear
+        unselectedCell.layer.borderWidth = 0
+    }
 }
