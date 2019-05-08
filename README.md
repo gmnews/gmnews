@@ -33,7 +33,6 @@
 * Create alarms :heavy_check_mark:
 * Turn off alarms :heavy_check_mark:
 * Show full article when pressed :heavy_check_mark:
-* History/saved articles
 
 **Optional Nice-to-have Stories**
 
