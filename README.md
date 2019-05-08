@@ -36,10 +36,9 @@
 
 **Optional Nice-to-have Stories**
 
-* Show full article in app
+* Show full article in app :heavy_check_mark:
 * Show weather
 * Share article
-* Dismiss article from main screen
 
 ### 2. Screen Archetypes
 
