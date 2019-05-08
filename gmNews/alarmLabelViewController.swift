@@ -29,7 +29,12 @@ class alarmLabelViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-
+    @IBAction func onDone(_ sender: Any) {
+        alarmLabelTextField.resignFirstResponder()
+        delegate?.selectedLabel(label: alarmLabelTextField.text!)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
