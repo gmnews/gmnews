@@ -13,6 +13,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var sourceName: UILabel!
     @IBOutlet weak var articleText: UILabel!
+    var url: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()

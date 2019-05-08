@@ -8,6 +8,7 @@
 
 import UIKit
 import NewsAPISwift
+import Parse
 
 class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -35,11 +36,15 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func loadSources() {
-        newsAPI.getSources(country: .us) { result in
+        let country = PFUser.current()?.object(forKey: "country") as? String
+        let abr = country?.prefix(2).lowercased()
+        //print(String(abr!))
+        
+        newsAPI.getSources(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
             switch result{
             case .success(let sources):
                 self.sources = sources
-                print(sources)
+                //print(sources)
             case .failure(let error):
                 print(error)
             }
