@@ -11,6 +11,5 @@ import UIKit
 class NewsSourceCell: UICollectionViewCell {
     
     @IBOutlet weak var sourceName: UILabel!
-    var userSelected: Bool = false
     var sourceLogo: UIImage!
 }
