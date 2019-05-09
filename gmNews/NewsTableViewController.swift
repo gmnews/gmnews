@@ -28,6 +28,10 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        self.refreshControl = refreshControl
         loadNews()
     }
     
@@ -40,11 +44,17 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
             switch result {
             case .success(let headlines):
                 self.articles = headlines
+                //self.articles = []
             case .failure(let error):
                 self.articles = []
                 print(error)
             }
         }
+    }
+    
+    @objc func onRefresh(){
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
