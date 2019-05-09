@@ -33,6 +33,7 @@ class EditSourcesViewController: UIViewController, UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.indicatorStyle = UIScrollViewIndicatorStyle.black
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
@@ -95,6 +96,7 @@ class EditSourcesViewController: UIViewController, UICollectionViewDataSource, U
         selectedSources.append(sCell.id)
         
         cell.backgroundColor = UIColor.orange
+//        cell.backgroundColor = UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
         cell.layer.borderWidth = 2
     }
     
