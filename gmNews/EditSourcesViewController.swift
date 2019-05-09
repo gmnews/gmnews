@@ -21,7 +21,9 @@ class EditSourcesViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
+    //@IBOutlet weak var srcName: UILabel!
     @IBOutlet weak var sourceLogo: UIImageView!
+    let myColor = UIColor.init(red: 0.328, green: 0.488, blue: 0.396, alpha: 1)
     var selectedSources: [String] = []
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -64,8 +66,11 @@ class EditSourcesViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsSourceCell", for: indexPath) as! NewsSourceCell
         if cell.isSelected == true {
-            cell.backgroundColor = UIColor.orange
+            cell.backgroundColor = myColor
+            //cell.backgroundColor = UIColor.orange
             cell.layer.borderWidth = 2
+            cell.layer.borderColor = myColor.cgColor
+            cell.sourceName.textColor = UIColor.white
         } else {
             cell.backgroundColor = UIColor.clear
             cell.layer.borderWidth = 0
@@ -95,9 +100,11 @@ class EditSourcesViewController: UIViewController, UICollectionViewDataSource, U
         let sCell = sources[indexPath.item]
         selectedSources.append(sCell.id)
         
-        cell.backgroundColor = UIColor.orange
-//        cell.backgroundColor = UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-        cell.layer.borderWidth = 2
+        //cell.backgroundColor = UIColor.darkGray
+        cell.backgroundColor = UIColor.init(red: 0.328, green: 0.488, blue: 0.396, alpha: 1)
+        
+        
+        cell.layer.borderWidth = 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
