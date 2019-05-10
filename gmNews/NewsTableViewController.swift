@@ -25,6 +25,7 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barStyle = .black
         loadNews()
     }
 

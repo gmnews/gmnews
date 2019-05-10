@@ -19,6 +19,8 @@ class DisplayAlarmsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barStyle = .black
+        
         tableView.delegate = self
         tableView.dataSource = self
         

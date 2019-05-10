@@ -54,6 +54,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barStyle = .black
         
         // Retrieve user info from parse database
         let name = PFUser.current()?.object(forKey: "name") as? String
