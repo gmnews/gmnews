@@ -10,12 +10,13 @@ import UIKit
 import NewsAPISwift
 import Parse
 
-class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class SourcesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet weak var tableView: UITableView!
     let newsAPI = NewsAPI(apiKey: "9442852d248a42ae99a51dfe4189c0e5")
     let myColor = UIColor.init(red: 0.328, green: 0.488, blue: 0.396, alpha: 1)
     var selectedSources: [String] = []
+    var prevSources: [String] = []
     var sources = [NewsSource]() {
         didSet {
             DispatchQueue.main.async {
@@ -23,14 +24,16 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        
+        prevSources = (PFUser.current()?["savedSources"] as? [String])!
         
         loadSources()
     }
@@ -44,7 +47,7 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
             switch result{
             case .success(let sources):
                 self.sources = sources
-            //print(sources)
+                //print(sources)
             case .failure(let error):
                 print(error)
             }
@@ -52,15 +55,10 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
     }
     
     @IBAction func onDone(_ sender: Any) {
+        print(selectedSources)
         PFUser.current()?["savedSources"] = selectedSources
         PFUser.current()?.saveInBackground()
-        self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: nil)
-    }
-    
-    @IBAction func onSkip(_ sender: Any) {
-        PFUser.current()?["savedSources"] = []
-        PFUser.current()?.saveInBackground()
-        self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +68,14 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsSourceTableViewCell") as! NewsSourceTableViewCell
-        
+
         tableView.separatorColor = UIColor.orange
         
         let source = sources[indexPath.row]
+        if let index = prevSources.firstIndex(of: source.id) {
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
+            selectedSources.append(source.id)
+        }
         
         cell.sourceName?.text = source.name
         print(source.name)
@@ -82,14 +84,17 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        if let cell = tableView.cellForRow(at: indexPath) as? NewsSourceTableViewCell {
-        //            cell.isSelected = true
-        //        }
+//        if let cell = tableView.cellForRow(at: indexPath) as? NewsSourceTableViewCell {
+//            cell.isSelected = true
+//        }
         let cell : UITableViewCell = tableView.cellForRow(at: indexPath)!
-        //        cell.isSelected = true
-        
+//        cell.isSelected = true
+
         let sCell = sources[indexPath.row]
-        selectedSources.append(sCell.id)
+        
+        if selectedSources.firstIndex(of: sCell.id) == nil{
+            selectedSources.append(sCell.id)
+        }
         
         cell.contentView.backgroundColor = myColor
         cell.layer.borderWidth = 0
@@ -107,15 +112,15 @@ class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UI
         unselectedCell.backgroundColor = UIColor.clear
         unselectedCell.layer.borderWidth = 0
     }
-    
+
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

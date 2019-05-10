@@ -74,6 +74,10 @@ class SettingsViewController: UIViewController {
         emailLabel.text = email
     }
     
+    @IBAction func onEdit(_ sender: Any) {
+        self.performSegue(withIdentifier: "settingsToSources", sender: nil)
+    }
+    
     @IBAction func onLogout(_ sender: Any) {
         self.performSegue(withIdentifier: "returnToLoginSegue", sender: nil)
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
