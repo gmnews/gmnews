@@ -16,6 +16,42 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    func showEditName() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Edit name", message: nil, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Done", style: .default) { (_) in
+            
+            //getting the input values from user
+            let newName = alertController.textFields?[0].text
+            
+            PFUser.current()?["name"] = newName
+            PFUser.current()?.saveInBackground()
+            self.nameLabel.text = newName
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Name"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onEditName(_ sender: Any) {
+        showEditName()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +62,6 @@ class SettingsViewController: UIViewController {
         let email = PFUser.current()?.email
         
         // Set labels on UI to retrieved user info
-        
         if(name == nil) {
             nameLabel.text = username
         } else {
