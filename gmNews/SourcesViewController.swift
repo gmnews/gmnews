@@ -41,7 +41,7 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
     func loadSources(){
         let country = PFUser.current()?.object(forKey: "country") as? String
         let abr = country?.prefix(2).lowercased()
-        print(String(abr!))
+        //print(String(abr!))
         
         newsAPI.getSources(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
             switch result{
@@ -72,6 +72,10 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.separatorColor = UIColor.orange
         
         let source = sources[indexPath.row]
+        if let index = prevSources.firstIndex(of: source.id) {
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
+            selectedSources.append(source.id)
+        }
         
         cell.sourceName?.text = source.name
         print(source.name)
