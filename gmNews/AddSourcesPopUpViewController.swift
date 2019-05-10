@@ -1,8 +1,8 @@
 //
-//  AddSourcesPopUpViewController.swift
+//  SourcesViewController.swift
 //  gmNews
 //
-//  Created by Faith Shatto on 4/15/19.
+//  Created by Gilbert Curbelo on 5/9/19.
 //  Copyright © 2019 Martin Landin. All rights reserved.
 //
 
@@ -10,96 +10,112 @@ import UIKit
 import NewsAPISwift
 import Parse
 
-class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+class AddSourcesPopUpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     let newsAPI = NewsAPI(apiKey: "9442852d248a42ae99a51dfe4189c0e5")
+    let myColor = UIColor.init(red: 0.328, green: 0.488, blue: 0.396, alpha: 1)
+    var selectedSources: [String] = []
     var sources = [NewsSource]() {
         didSet {
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self.tableView.reloadData()
             }
         }
-    }
-    
-    var selectedSources: [String] = []
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBAction func onSkip(_ sender: Any) {
-        print(selectedSources)
-        PFUser.current()?["savedSources"] = selectedSources
-        PFUser.current()?.saveInBackground()
-        self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.allowsMultipleSelection = true
+        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
         
         loadSources()
     }
     
-    func loadSources() {
+    func loadSources(){
         let country = PFUser.current()?.object(forKey: "country") as? String
         let abr = country?.prefix(2).lowercased()
-        print(String(abr!))
+        //print(String(abr!))
         
         newsAPI.getSources(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
             switch result{
             case .success(let sources):
                 self.sources = sources
-                //print(sources)
+            //print(sources)
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @IBAction func onDone(_ sender: Any) {
+        PFUser.current()?["savedSources"] = selectedSources
+        PFUser.current()?.saveInBackground()
+        self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: nil)
+    }
+    
+    @IBAction func onSkip(_ sender: Any) {
+        PFUser.current()?["savedSources"] = []
+        PFUser.current()?.saveInBackground()
+        self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sources.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsSourceCell", for: indexPath) as! NewsSourceCell
-        if cell.isSelected == true {
-            cell.backgroundColor = UIColor.orange
-            cell.layer.borderWidth = 2
-        } else {
-            cell.backgroundColor = UIColor.clear
-            cell.layer.borderWidth = 0
-        }
-
-        let source = sources[indexPath.item]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsSourceTableViewCell") as! NewsSourceTableViewCell
+        
+        tableView.separatorColor = UIColor.orange
+        
+        let source = sources[indexPath.row]
         
         cell.sourceName?.text = source.name
-        //cell.sourceId = source.id
+        print(source.name)
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
-        cell.isSelected = true
-
-        let sCell = sources[indexPath.item]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        if let cell = tableView.cellForRow(at: indexPath) as? NewsSourceTableViewCell {
+        //            cell.isSelected = true
+        //        }
+        let cell : UITableViewCell = tableView.cellForRow(at: indexPath)!
+        //        cell.isSelected = true
+        
+        let sCell = sources[indexPath.row]
         selectedSources.append(sCell.id)
         
-        cell.backgroundColor = UIColor.orange
-        cell.layer.borderWidth = 2
+        cell.contentView.backgroundColor = myColor
+        cell.layer.borderWidth = 0
     }
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let unselectedCell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let unselectedCell : UITableViewCell = tableView.cellForRow(at: indexPath)!
         unselectedCell.isSelected = false
-
-        let uCell = sources[indexPath.item]
+        
+        let uCell = sources[indexPath.row]
         if let index = selectedSources.firstIndex(of: uCell.id){
             selectedSources.remove(at: index)
         }
-
+        
         unselectedCell.backgroundColor = UIColor.clear
         unselectedCell.layer.borderWidth = 0
     }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
