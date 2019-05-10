@@ -25,7 +25,6 @@
 		52990F67224EF23B000426FF /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F66224EF23B000426FF /* News.storyboard */; };
 		52990F69224EF246000426FF /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F68224EF246000426FF /* Alarm.storyboard */; };
 		52990F6B224EF264000426FF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52990F6A224EF264000426FF /* Settings.storyboard */; };
-		52A300B42270EA2A005352D2 /* ViewAlarmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A300B32270EA2A005352D2 /* ViewAlarmDelegate.swift */; };
 		52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A59A66225E838700B628AC /* AlarmTableViewController.swift */; };
 		52E82B0E224C2FF30025F9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B0D224C2FF30025F9B2 /* AppDelegate.swift */; };
 		52E82B10224C2FF30025F9B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E82B0F224C2FF30025F9B2 /* ViewController.swift */; };
@@ -86,7 +85,6 @@
 		52990F66224EF23B000426FF /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		52990F68224EF246000426FF /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		52990F6A224EF264000426FF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		52A300B32270EA2A005352D2 /* ViewAlarmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewAlarmDelegate.swift; path = /Users/martinlandin/Desktop/SchoolWork/CST495/gmnews/gmNews/ViewAlarmDelegate.swift; sourceTree = "<absolute>"; };
 		52A59A66225E838700B628AC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		52E82B0A224C2FF30025F9B2 /* gmNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gmNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E82B0D224C2FF30025F9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				52486D842267D22F0011E54F /* WeekdayDelegate.swift */,
 				522ED5B9226A7D5D00DA354C /* WeekdayToAlarmTableDelegate.swift */,
 				522ED5BB226A84CC00DA354C /* LabelToAlarmTableDelegate.swift */,
-				52A300B32270EA2A005352D2 /* ViewAlarmDelegate.swift */,
 				522ED5BD226AEF2500DA354C /* SoundDelegate.swift */,
 				522ED5BF226AF17500DA354C /* SoundToAlarmTableDelegate.swift */,
 				522ED5C1226AF32A00DA354C /* AlarmDetailsDelegate.swift */,
@@ -489,7 +486,6 @@
 				522ED5BC226A84CC00DA354C /* LabelToAlarmTableDelegate.swift in Sources */,
 				0239E1CB226D047F00075290 /* NewsSourceCell.swift in Sources */,
 				529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */,
-				52A300B42270EA2A005352D2 /* ViewAlarmDelegate.swift in Sources */,
 				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
 				522ED5BE226AEF2500DA354C /* SoundDelegate.swift in Sources */,
 			);
