@@ -26,6 +26,13 @@ class SettingsViewController: UIViewController {
         let email = PFUser.current()?.email
         
         // Set labels on UI to retrieved user info
+        
+        if(name == nil) {
+            nameLabel.text = username
+        } else {
+            nameLabel.text = name
+        }
+        
         usernameLabel.text = username
         countryLabel.text = country
         emailLabel.text = email
