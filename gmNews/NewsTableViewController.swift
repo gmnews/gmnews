@@ -15,6 +15,7 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
     
     let newsAPI = NewsAPI(apiKey: "9442852d248a42ae99a51dfe4189c0e5")
     var myString: String? = nil
+    var curUserSources = [String]()
     var articles = [NewsArticle]() {
         didSet {
             DispatchQueue.main.async {
@@ -28,7 +29,7 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBar.barStyle = .black
         
         let refreshControl = UIRefreshControl()
@@ -40,23 +41,43 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
     
     func loadNews(){
         let country = PFUser.current()?.object(forKey: "country") as? String
+        let userSources = PFUser.current()?["savedSources"] as? [String]
+        curUserSources = userSources ?? []        //print(PFUser.current()?["savedSources"])
+        
         let abr = country?.prefix(2).lowercased()
         //print(String(abr!))
         
-        newsAPI.getTopHeadlines(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
-            switch result {
-            case .success(let headlines):
-                self.articles = headlines
-                //self.articles = []
-            case .failure(let error):
-                self.articles = []
-                print(error)
+        if userSources?.count == 0{
+            newsAPI.getTopHeadlines(country: NewsCountry(rawValue: String(abr!)) ?? .us) { result in
+                switch result {
+                case .success(let headlines):
+                    self.articles = headlines
+                    //self.articles = []
+                case .failure(let error):
+                    self.articles = []
+                    print(error)
+                }
+            }
+        } else {
+            newsAPI.getTopHeadlines(sources: userSources) { result in
+                switch result {
+                case .success(let headlines):
+                    self.articles = headlines
+                case .failure(let error):
+                    self.articles = []
+                    print(error)
+                }
             }
         }
     }
     
     @objc func onRefresh(){
         tableView.reloadData()
+        
+        if curUserSources != PFUser.current()?["savedSources"] as! [String] {
+            loadNews()
+        }
+        
         refreshControl?.endRefreshing()
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class NewsSourceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sourceName: UILabel!
+    var userSelected: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

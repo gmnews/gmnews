@@ -26,6 +26,8 @@ class AddSourcesPopUpViewController: UIViewController, UICollectionViewDataSourc
     
     @IBAction func onSkip(_ sender: Any) {
         print(selectedSources)
+        PFUser.current()?["savedSources"] = selectedSources
+        PFUser.current()?.saveInBackground()
         self.performSegue(withIdentifier: "SourcesToHomeSegue", sender: self)
     }
     

@@ -16,6 +16,7 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
     let newsAPI = NewsAPI(apiKey: "9442852d248a42ae99a51dfe4189c0e5")
     let myColor = UIColor.init(red: 0.328, green: 0.488, blue: 0.396, alpha: 1)
     var selectedSources: [String] = []
+    var prevSources: [String] = []
     var sources = [NewsSource]() {
         didSet {
             DispatchQueue.main.async {
@@ -31,6 +32,8 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        
+        prevSources = (PFUser.current()?["savedSources"] as? [String])!
         
         loadSources()
     }
@@ -53,6 +56,8 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func onDone(_ sender: Any) {
         print(selectedSources)
+        PFUser.current()?["savedSources"] = selectedSources
+        PFUser.current()?.saveInBackground()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -63,15 +68,8 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsSourceTableViewCell") as! NewsSourceTableViewCell
+
         tableView.separatorColor = UIColor.orange
-        print(cell.isSelected)
-        if cell.isSelected == true {
-            cell.backgroundColor = UIColor.cyan
-            cell.layer.borderWidth = 0
-        } else {
-            cell.backgroundColor = UIColor.clear
-            cell.layer.borderWidth = 0
-        }
         
         let source = sources[indexPath.row]
         
@@ -82,19 +80,22 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let cell = tableView.cellForRow(at: indexPath) as? NewsSourceTableViewCell {
+//            cell.isSelected = true
+//        }
         let cell : UITableViewCell = tableView.cellForRow(at: indexPath)!
-        cell.isSelected = true
-        
+//        cell.isSelected = true
+
         let sCell = sources[indexPath.row]
         selectedSources.append(sCell.id)
         
-        cell.backgroundColor = myColor
+        cell.contentView.backgroundColor = myColor
         cell.layer.borderWidth = 0
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let unselectedCell : UITableViewCell = tableView.cellForRow(at: indexPath)!
-        unselectedCell.setSelected(false, animated: true)
+        unselectedCell.isSelected = false
         
         let uCell = sources[indexPath.row]
         if let index = selectedSources.firstIndex(of: uCell.id){
