@@ -32,6 +32,9 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         self.refreshControl = refreshControl
+        
+        navigationController?.navigationBar.barStyle = .black
+        
         loadNews()
     }
     

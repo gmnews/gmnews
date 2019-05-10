@@ -62,11 +62,11 @@ class CreateAlarmViewController: UIViewController{
                 
                 let request = UNNotificationRequest(identifier: alarmLabel!, content: content, trigger: trigger)
                 
-                center.add(request) { (error) in
-                    if error != nil {
-                        print(error!)
-                    }
-                }
+//                center.add(request) { (error) in
+//                    if error != nil {
+//                        print(error!)
+//                    }
+//                }
                 
             }
             dayCounter += 1

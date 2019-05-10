@@ -15,14 +15,16 @@ class DisplayAlarmsTableViewController: UITableViewController {
     
     var setAlarms = [[String]]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let alarms = UserDefaults.standard.dictionary(forKey: "Alarms") as? [String : [String]] ?? [String: [String]]()
+        navigationController?.navigationBar.barStyle = .black
         
-        for (key, value) in alarms {
-            setAlarms.append(value)
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         tableView.tableFooterView = UIView()
     }
@@ -51,6 +53,45 @@ class DisplayAlarmsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setAlarms.removeAll()
+        
+        let alarms = UserDefaults.standard.dictionary(forKey: "Alarms") as? [String : [String]] ?? [String: [String]]()
+        
+        for (key, value) in alarms {
+            setAlarms.append(value)
+        }
+        tableView.reloadData()
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cell = tableView.cellForRow(at: indexPath) as! AlarmTableViewCell
+            let alarmIdentifier = cell.alarmNameLabel.text!
+            
+            var alarmsSet = UserDefaults.standard.dictionary(forKey: "Alarms") as? [String: [String]] ?? [String : [String]]()
+            alarmsSet.removeValue(forKey: alarmIdentifier)
+            
+            setAlarms.removeAll()
+            for (key, value) in alarmsSet {
+                setAlarms.append(value)
+            }
+            
+            UserDefaults.standard.set(setAlarms, forKey: "Alarms")
+            
+            let center = UNUserNotificationCenter.current()
+            center.removeDeliveredNotifications(withIdentifiers: [alarmIdentifier])
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    }
+    
+    
 
 
     /*

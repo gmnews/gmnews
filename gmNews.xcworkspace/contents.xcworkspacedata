@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:gmNews/ViewAlarmDelegate.swift">
+   </FileRef>
+   <FileRef
       location = "group:gmNews.xcodeproj">
    </FileRef>
    <FileRef
