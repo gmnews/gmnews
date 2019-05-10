@@ -91,7 +91,10 @@ class SourcesViewController: UIViewController, UITableViewDataSource, UITableVie
 //        cell.isSelected = true
 
         let sCell = sources[indexPath.row]
-        selectedSources.append(sCell.id)
+        
+        if selectedSources.firstIndex(of: sCell.id) == nil{
+            selectedSources.append(sCell.id)
+        }
         
         cell.contentView.backgroundColor = myColor
         cell.layer.borderWidth = 0
