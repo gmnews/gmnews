@@ -11,4 +11,5 @@ import UIKit
 class NewsSourceCell: UICollectionViewCell {
     
     @IBOutlet weak var sourceName: UILabel!
+    var sourceLogo: UIImage!
 }

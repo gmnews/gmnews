@@ -18,6 +18,9 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
     var articles = [NewsArticle]() {
         didSet {
             DispatchQueue.main.async {
+                if self.articles.count == 0 {
+                    self.setEmptyView(title: "Error", message: "Error loading sources")
+                }
                 self.tableView.reloadData()
             }
         }
@@ -25,11 +28,15 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         navigationController?.navigationBar.barStyle = .black
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        self.refreshControl = refreshControl
+
         loadNews()
     }
-
-    
     
     func loadNews(){
         let country = PFUser.current()?.object(forKey: "country") as? String
@@ -40,15 +47,18 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
             switch result {
             case .success(let headlines):
                 self.articles = headlines
-                print(headlines)
+                //self.articles = []
             case .failure(let error):
+                self.articles = []
                 print(error)
             }
         }
     }
     
-    
-    
+    @objc func onRefresh(){
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsSource", for: indexPath) as! ArticleTableViewCell
@@ -76,6 +86,11 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if articles.count == 0 {
+            self.setEmptyView(title: "Error", message: "Error loading sources")
+        } else {
+            self.restore()
+        }
         return articles.count
     }
 
@@ -158,5 +173,40 @@ class NewsTableViewController: UITableViewController, SFSafariViewControllerDele
         svc.delegate = self
     }
     
+    func setEmptyView(title: String, message: String) {
+        let emptyView = UIView(frame: CGRect(x: tableView.center.x, y: tableView.center.y, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        let titleLabel = UILabel()
+        let messageLabel = UILabel()
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        
+        messageLabel.textColor = UIColor.lightGray
+        messageLabel.font = UIFont(name: "HelveticaNeue-Regular", size: 17)
+        
+        emptyView.addSubview(titleLabel)
+        emptyView.addSubview(messageLabel)
+        
+        titleLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: emptyView.leftAnchor, constant: 20).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: emptyView.rightAnchor, constant: -20).isActive = true
+        
+        titleLabel.text = title
+        messageLabel.text = message
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        
+        tableView.backgroundView = emptyView
+        tableView.separatorStyle = .none
+    }
 
+    func restore() {
+        tableView.backgroundView = nil
+        tableView.separatorStyle = .singleLine
+    }
 }

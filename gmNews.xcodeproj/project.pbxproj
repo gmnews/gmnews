@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0239E1CB226D047F00075290 /* NewsSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239E1CA226D047F00075290 /* NewsSourceCell.swift */; };
+		0DD0DEEE22855EBB009A1273 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0DEED22855EB9009A1273 /* SourcesViewController.swift */; };
+		0DD0DEF022855F09009A1273 /* NewsSourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0DEEF22855F09009A1273 /* NewsSourceTableViewCell.swift */; };
 		0DD4A3E222598B6200D1AF6B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */; };
 		0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */; };
 		521067CA2262DA88007954AB /* selectWeekdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521067C92262DA88007954AB /* selectWeekdaysViewController.swift */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		0239E1CA226D047F00075290 /* NewsSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSourceCell.swift; sourceTree = "<group>"; };
 		0ADA4488F32BBBB0222B468B /* Pods_gmNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gmNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DD0DEED22855EB9009A1273 /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = "<group>"; };
+		0DD0DEEF22855F09009A1273 /* NewsSourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSourceTableViewCell.swift; sourceTree = "<group>"; };
 		0DD4A3E122598B6200D1AF6B /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		0DD4A3E32259946200D1AF6B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		11D1C8A56D9AA4806A454731 /* Pods-gmNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-gmNewsUITests/Pods-gmNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		52E82B0C224C2FF30025F9B2 /* gmNews */ = {
 			isa = PBXGroup;
 			children = (
+				0DD0DEEF22855F09009A1273 /* NewsSourceTableViewCell.swift */,
+				0DD0DEED22855EB9009A1273 /* SourcesViewController.swift */,
 				DC26E04A22853B6C008F4FD3 /* ViewAlarmDelegate.swift */,
 				52E82B0D224C2FF30025F9B2 /* AppDelegate.swift */,
 				52E82B0F224C2FF30025F9B2 /* ViewController.swift */,
@@ -484,12 +490,14 @@
 				5288912A226E7534008A4BA9 /* AlarmTableViewCell.swift in Sources */,
 				DC65BB8F22653D4C00539A77 /* SignUpViewController.swift in Sources */,
 				521067CC2262DB0E007954AB /* alarmLabelViewController.swift in Sources */,
+				0DD0DEEE22855EBB009A1273 /* SourcesViewController.swift in Sources */,
 				52A59A67225E838700B628AC /* AlarmTableViewController.swift in Sources */,
 				0DD4A3E42259946200D1AF6B /* ArticleTableViewCell.swift in Sources */,
 				522ED5BC226A84CC00DA354C /* LabelToAlarmTableDelegate.swift in Sources */,
 				0239E1CB226D047F00075290 /* NewsSourceCell.swift in Sources */,
 				DC26E04B22853B6C008F4FD3 /* ViewAlarmDelegate.swift in Sources */,
 				529372A4225FF7EB007CE280 /* WeekdaysTableViewController.swift in Sources */,
+				0DD0DEF022855F09009A1273 /* NewsSourceTableViewCell.swift in Sources */,
 				DC3D33BB22597E6E007D2581 /* SettingsViewController.swift in Sources */,
 				522ED5BE226AEF2500DA354C /* SoundDelegate.swift in Sources */,
 			);
